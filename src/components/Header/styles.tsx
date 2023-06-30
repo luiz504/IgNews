@@ -11,7 +11,7 @@ const navItemVariants = cva(
     variants: {
       active: {
         true: [
-          'after:content-[""] after:h-[3px] after:w-full after:rounded-t-sm after:absolute after:bottom-0 after:left-0 after:bg-yellow',
+          'after:content-[""] after:h-[3px] after:w-full after:rounded-t-sm after:absolute after:bottom-[3px] after:left-0 after:bg-yellow',
           'text-white font-bold',
         ],
       },

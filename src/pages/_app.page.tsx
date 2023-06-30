@@ -6,6 +6,7 @@ import { DefaultSeo } from 'next-seo'
 import '~/styles/global.css'
 
 import { Header } from '~/components/Header'
+import Head from 'next/head'
 
 const roboto = Roboto({
   weight: ['400', '700', '900'],
@@ -15,6 +16,9 @@ const roboto = Roboto({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <style global jsx>{`
         html {
           font-family: ${roboto.style.fontFamily};

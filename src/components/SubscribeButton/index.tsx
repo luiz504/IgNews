@@ -1,9 +1,12 @@
 import { FC, HTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-interface SubscribeButtonProsp extends HTMLAttributes<HTMLButtonElement> {}
+interface SubscribeButtonProsp extends HTMLAttributes<HTMLButtonElement> {
+  priceId: string
+}
 export const SubscribeButton: FC<SubscribeButtonProsp> = ({
   className,
+  priceId,
   ...rest
 }) => {
   return (

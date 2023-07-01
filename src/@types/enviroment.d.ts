@@ -3,5 +3,6 @@ declare namespace NodeJS {
     STRIPE_SECRET_KEY: string;
     GITHUB_ID: string;
     GITHUB_SECRET_KEY: string;
+    FAUNADB_SECRET_KEY: string;
   }
 }

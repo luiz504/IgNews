@@ -33,6 +33,7 @@ export default function Home({ product }: HomeProps) {
             src="/images/avatar.svg"
             className="object-contain max-h-full"
             height={520}
+            priority
             width={334}
             alt="Girl coding"
           />

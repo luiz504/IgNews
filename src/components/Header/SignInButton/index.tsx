@@ -1,28 +1,43 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { FiX } from 'react-icons/fi'
+import { signIn, signOut, useSession } from 'next-auth/react'
+
+import { buttonStyle } from './styles'
 
 export const SignInButton: FC = () => {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
+  const { data: session } = useSession()
 
-  return isUserLoggedIn ? (
-    <button
-      type="button"
-      className="flex items-center px-6 py-3 rounded-full gap-3 bg-cyan--900 text-white hover:brightness-90 transition custom-focus-visible"
-      onClick={() => setIsUserLoggedIn(false)}
-    >
-      <FaGithub className={`h-6 w-6 text-green`} />
-      <span className="font-bold">Luiz Bueno</span>
-      <FiX className="h-5 w-5 text-gray--500 " />
-    </button>
-  ) : (
-    <button
-      type="button"
-      className="flex items-center px-6 py-3 rounded-full gap-3 bg-cyan--900 text-white hover:brightness-90 transition custom-focus-visible"
-      onClick={() => setIsUserLoggedIn(true)}
-    >
-      <FaGithub className={`h-6 w-6 text-yellow`} />
-      <span className="font-bold">Sign In with Github</span>
-    </button>
+  const isUserLeggedIn = !!session?.user?.email
+
+  const userName = session?.user?.name
+
+  return (
+    <>
+      {isUserLeggedIn && (
+        <button
+          type="button"
+          className={buttonStyle()}
+          onClick={() => signOut()}
+        >
+          <FaGithub className={`h-6 w-6 text-green`} />
+
+          <span className="font-bold">{userName}</span>
+
+          <FiX className="h-5 w-5 text-gray--500 " />
+        </button>
+      )}
+
+      {!isUserLeggedIn && (
+        <button
+          type="button"
+          className={buttonStyle()}
+          onClick={() => signIn('github')}
+        >
+          <FaGithub className={`h-6 w-6 text-yellow`} />
+          <span className="font-bold">Sign In with Github</span>
+        </button>
+      )}
+    </>
   )
 }

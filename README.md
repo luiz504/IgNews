@@ -16,3 +16,17 @@ This tool is required in devMode to listen the events from stripe and forwards t
 ```bash
 stripe listen --forward-to localhost:3000/api/webhooks
 ```
+
+## Prismic CMS
+
+### [Prismic Slice Machine](https://prismic.io/slice-machine):
+
+Devtool to build the post builder.
+
+```bash
+  pn slicemachine
+```
+
+### [Dashboard URL](https://prismic.io/dashboard)
+
+Posts Builder and management

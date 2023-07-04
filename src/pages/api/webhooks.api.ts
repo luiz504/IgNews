@@ -33,7 +33,6 @@ export const webHooksListerner: NextApiHandler = async (req, res) => {
       process.env.STRIPE_WEBHOOK_SECRET_KEY,
     )
   } catch (err: any) {
-    console.log('1231', err)
     return res.status(400).send(`Webhook error: ${err?.message}`)
   }
 

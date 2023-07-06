@@ -17,9 +17,11 @@ type PostType = {
 
 interface PostProps {
   post: PostType
+  session: any
 }
 
-export default function Post({ post }: PostProps) {
+export default function Post({ post, session }: PostProps) {
+  console.log('session', session)
   return (
     <>
       <NextSeo title={`${post.title} | ig.news`} noindex />
@@ -49,6 +51,15 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   const session = await getSession({ req })
 
+  if (!session?.activeSubscription) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
   const slug = queryParamToString(params?.slug) || ''
 
   const prismic = createPrismicClient()
@@ -62,11 +73,10 @@ export const getServerSideProps: GetServerSideProps = async ({
     updatedAt: formatDate(post.last_publication_date),
   }
 
-  console.log('response', { post, item })
-
   return {
     props: {
       post: item,
+      session,
     },
   }
 }

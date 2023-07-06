@@ -1,4 +1,5 @@
 import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 import { FC, HTMLAttributes, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { api } from '~/libs/axios'
@@ -16,8 +17,11 @@ export const SubscribeButton: FC<SubscribeButtonProsp> = ({
   priceId,
   ...rest
 }) => {
+  const router = useRouter()
+
   const { data: session } = useSession()
   const isLoggedIn = session?.user?.email
+  const isUserSubbscribed = session?.activeSubscription
 
   const [subscribingOrloggingIn, setSubscribingOrloggingIn] = useState(false)
 
@@ -25,6 +29,11 @@ export const SubscribeButton: FC<SubscribeButtonProsp> = ({
     setSubscribingOrloggingIn(true)
     if (!isLoggedIn) {
       await signIn('github')
+      return
+    }
+
+    if (isUserSubbscribed) {
+      await router.push('/posts')
       return
     }
 

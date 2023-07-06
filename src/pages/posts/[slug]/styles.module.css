@@ -1,0 +1,54 @@
+.postContent {
+  line-height: 2rem;
+  font-size: 1.125rem;
+  color: theme("colors.gray.100");
+}
+
+.postContent p,
+.postContent ul {
+  margin-top: 1.5rem;
+}
+
+.postContent ul {
+  padding-left: 1.5rem;
+}
+
+.postContent a {
+  color: theme("colors.blue.500");
+}
+
+.postContent strong {
+  color: theme("colors.white");
+}
+
+.postContent pre {
+  background: theme("colors.gray.800");
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow: auto;
+  @apply scrollbar  scrollbar-thumb-gray-400 scrollbar-track-gray-200;
+}
+
+.postContent h1,
+.postContent h2,
+.postContent h3,
+.postContent h4,
+.postContent h5,
+.postContent h6 {
+  margin-top: 1.5rem;
+  color: theme("colors.white");
+  font-size: 1.5rem;
+  font-weight: 1.25rem;
+}
+
+.postContent iframe {
+  width: 100%;
+  height: auto;
+  @apply aspect-video;
+}
+
+.postContent pre,
+.postContent iframe,
+.postContent img {
+  margin-top: 1rem;
+}

@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { createPrismicClient } from '~/libs/prismic'
+import { formatDate } from '~/utils/dateFormat'
 
 type Post = {
   slug: string
@@ -64,14 +65,7 @@ export const getStaticProps: GetStaticProps = async () => {
       slug: post.uid,
       title: post.data.title as string,
       excerpt,
-      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
-        'pt-BR',
-        {
-          day: '2-digit',
-          month: 'long',
-          year: 'numeric',
-        },
-      ),
+      updatedAt: formatDate(post.last_publication_date),
     }
 
     return item

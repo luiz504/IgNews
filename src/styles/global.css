@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  @apply scrollbar scrollbar-track-inherit scrollbar-thumb-gray--500;
+}
+
 body {
   color: theme("colors.white");
   background: theme("backgroundColor.gray.-900");

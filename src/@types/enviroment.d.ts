@@ -7,5 +7,6 @@ declare namespace NodeJS {
     GITHUB_ID: string;
     GITHUB_SECRET_KEY: string;
     FAUNADB_SECRET_KEY: string;
+    PRISMIC_ACCESS_TOKEN:string;
   }
 }

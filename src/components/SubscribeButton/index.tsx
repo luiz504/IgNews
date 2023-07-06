@@ -21,7 +21,7 @@ export const SubscribeButton: FC<SubscribeButtonProsp> = ({
 
   const { data: session } = useSession()
   const isLoggedIn = session?.user?.email
-  const isUserSubbscribed = session?.activeSubscription
+  const isUserSubscribed = session?.activeSubscription
 
   const [subscribingOrloggingIn, setSubscribingOrloggingIn] = useState(false)
 
@@ -32,7 +32,7 @@ export const SubscribeButton: FC<SubscribeButtonProsp> = ({
       return
     }
 
-    if (isUserSubbscribed) {
+    if (isUserSubscribed) {
       await router.push('/posts')
       return
     }

@@ -52,3 +52,9 @@
 .postContent img {
   margin-top: 1rem;
 }
+
+.postContent[data-preview="true"] {
+  background: linear-gradient(theme("colors.gray.-100"), transparent);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

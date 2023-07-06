@@ -17,16 +17,14 @@ type PostType = {
 
 interface PostProps {
   post: PostType
-  session: any
 }
 
-export default function Post({ post, session }: PostProps) {
-  console.log('session', session)
+export default function Post({ post }: PostProps) {
   return (
     <>
       <NextSeo title={`${post.title} | ig.news`} noindex />
 
-      <main className="max-w-[1120px] mx-auto px-2">
+      <main className="max-w-[1120px] mx-auto px-8">
         <article className="max-w-[720px] mt-20 mx-auto">
           <h1 className="text-[3.5rem] font-black leading-[1.1]">
             {post.title}
@@ -76,7 +74,6 @@ export const getServerSideProps: GetServerSideProps = async ({
   return {
     props: {
       post: item,
-      session,
     },
   }
 }

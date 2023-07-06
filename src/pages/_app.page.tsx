@@ -4,12 +4,10 @@ import Head from 'next/head'
 import { Roboto } from 'next/font/google'
 import { DefaultSeo } from 'next-seo'
 import { SessionProvider } from 'next-auth/react'
-import { PrismicPreview } from '@prismicio/next'
 
 import '~/styles/global.css'
 
 import { Header } from '~/components/Header'
-import { repositoryName } from '~/libs/prismic'
 
 const roboto = Roboto({
   weight: ['400', '700', '900'],
@@ -40,7 +38,6 @@ export default function App({
 
         <Component {...pageProps} />
       </SessionProvider>
-      <PrismicPreview repositoryName={repositoryName} />
     </>
   )
 }

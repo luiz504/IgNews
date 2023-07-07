@@ -1,0 +1,5 @@
+{
+  "html": {
+    "allowed_elements": ["details", "br", "summary"]
+  }
+}

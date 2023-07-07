@@ -165,6 +165,25 @@ the Prismic API request.
 
 </details>
 
+<details>
+  <summary>Github OAuth Provider</summary>
+  <br/>
+  To set up the GitHub OAuth provider, follow these steps:
+
+1. Login to your GitHub account and go to the repository that will be the app's
+   OAuth host.
+2. Navigate to Settings > Developer Settings > GitHub Apps > New GitHub App.
+3. Fill in the required data for the GitHub App. For the homepage URL, you can
+   use `http://localhost:3000`, and for the Authorization callback URL, use
+   `http://localhost:3000/api/auth/callback/github` in development mode.
+4. Click on `Create GitHub App`.
+5. Take note of the `Client ID` and `Client Secret` provided by GitHub.
+6. In the `.env.local` file, set the `GITHUB_ID` variable to the Client ID
+   obtained in the previous step, and set the `GITHUB_SECRET_KEY` variable to
+   the Client Secret.
+
+</details>
+
 ## Development Mode Scripts
 
 To run the project in development mode, you can use the following scripts:

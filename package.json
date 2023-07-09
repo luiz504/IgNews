@@ -37,7 +37,13 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
     "@slicemachine/adapter-next": "^0.3.2",
+    "@testing-library/dom": "^9.3.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "autoprefixer": "^10.4.14",
+    "babel-jest": "^29.6.1",
+    "jest": "^29.6.1",
+    "jest-dom": "^4.0.0",
     "postcss": "^8.4.24",
     "postcss-import": "^15.1.0",
     "slice-machine-ui": "^1.4.0",

@@ -1,20 +1,19 @@
-import { FC } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { FiX } from 'react-icons/fi'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
 import { buttonStyle } from './styles'
 
-export const SignInButton: FC = () => {
+export const SignInButton = () => {
   const { data: session } = useSession()
 
-  const isUserLeggedIn = !!session?.user?.email
+  const isUserLoggedIn = !!session?.user?.email
 
   const userName = session?.user?.name
 
   return (
     <>
-      {isUserLeggedIn && (
+      {isUserLoggedIn && (
         <button
           type="button"
           className={buttonStyle()}
@@ -28,7 +27,7 @@ export const SignInButton: FC = () => {
         </button>
       )}
 
-      {!isUserLeggedIn && (
+      {!isUserLoggedIn && (
         <button
           type="button"
           className={buttonStyle()}

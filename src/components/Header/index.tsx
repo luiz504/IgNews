@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { SignInButton } from './SignInButton'
-import { ActiveLink } from '../ActiveLink'
+import { ActiveLink } from './ActiveLink'
 
 export const Header = () => {
   return (

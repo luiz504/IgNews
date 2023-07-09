@@ -14,11 +14,9 @@ describe('SignInButton Component', () => {
       update: async () => null,
     })
 
-    const { debug } = render(<SignInButton />)
+    render(<SignInButton />)
 
     expect(screen.getByText('Sign In with Github')).toBeInTheDocument()
-
-    debug()
   })
 
   it('renders correctly when user is authenticated', () => {

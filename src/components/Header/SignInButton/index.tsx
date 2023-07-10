@@ -11,14 +11,18 @@ export const SignInButton = () => {
 
   const userName = session?.user?.name
 
+  const handleSignOut = () => {
+    signOut()
+  }
+
+  const handleSignIn = () => {
+    signIn('github')
+  }
+
   return (
     <>
       {isUserLoggedIn && (
-        <button
-          type="button"
-          className={buttonStyle()}
-          onClick={() => signOut()}
-        >
+        <button type="button" className={buttonStyle()} onClick={handleSignOut}>
           <FaGithub className={`h-6 w-6 text-green`} />
 
           <span className="font-bold">{userName}</span>
@@ -28,11 +32,7 @@ export const SignInButton = () => {
       )}
 
       {!isUserLoggedIn && (
-        <button
-          type="button"
-          className={buttonStyle()}
-          onClick={() => signIn('github')}
-        >
+        <button type="button" className={buttonStyle()} onClick={handleSignIn}>
           <FaGithub className={`h-6 w-6 text-yellow`} />
           <span className="font-bold">Sign In with Github</span>
         </button>

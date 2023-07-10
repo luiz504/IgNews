@@ -12,6 +12,9 @@ const config = {
   moduleNameMapper: {
     '^~/(.*)$': '<rootDir>/src/$1',
   },
+  verbose: true,
+  coverageReporters: ['clover', 'json', 'lcov', 'text', 'html'],
+  coveragePathIgnorePatterns: ['<rootDir>/src/libs/'],
 }
 
 module.exports = createJestConfig(config)

@@ -39,4 +39,15 @@ describe('Home page', () => {
       }),
     )
   })
+
+  it('should redirect to error page Stripes does not return the price unity', async () => {
+    stripePricesRetriveMock.mockResolvedValueOnce({
+      id: 'price-id-fake',
+      unit_amount: undefined,
+    } as any)
+
+    const response = await getStaticProps({})
+
+    expect(response).toEqual(expect.objectContaining({ redirect: '/error' }))
+  })
 })

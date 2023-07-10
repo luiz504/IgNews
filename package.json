@@ -7,6 +7,7 @@
     "stripe:dev": "stripe listen --forward-to localhost:3000/api/webhooks",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
+    "test:coverage": "jest --coverage",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

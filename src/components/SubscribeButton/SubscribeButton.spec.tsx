@@ -12,12 +12,12 @@ jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }))
 
-const useSessionMock = useSession as jest.Mock<ReturnType<typeof useSession>>
-const useRouterMock = useRouter as jest.Mock<ReturnType<typeof useRouter>>
+const useSessionMocked = jest.mocked(useSession)
+const useRouterMocked = jest.mocked(useRouter)
 
 describe('SubscribeButton Component', () => {
   it('should render the button correctly', () => {
-    useSessionMock.mockReturnValue({
+    useSessionMocked.mockReturnValue({
       data: null,
       status: 'unauthenticated',
       update: async () => null,
@@ -31,7 +31,7 @@ describe('SubscribeButton Component', () => {
   })
 
   it('should redirect the user to the SignIn provider page when not authenticated', () => {
-    useSessionMock.mockReturnValue({
+    useSessionMocked.mockReturnValue({
       data: null,
       status: 'unauthenticated',
       update: async () => null,
@@ -48,7 +48,7 @@ describe('SubscribeButton Component', () => {
   })
 
   it('should redirect the user to /posts when user already has an active subscrition', () => {
-    useSessionMock.mockReturnValueOnce({
+    useSessionMocked.mockReturnValueOnce({
       data: {
         user: { name: 'John Doe', email: 'JohnDoe@email.com' },
         expires: '12312',
@@ -60,7 +60,7 @@ describe('SubscribeButton Component', () => {
 
     const mockedPush = jest.fn()
 
-    useRouterMock.mockReturnValue({
+    useRouterMocked.mockReturnValue({
       push: mockedPush,
     } as any)
 

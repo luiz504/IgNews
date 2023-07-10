@@ -16,6 +16,7 @@ jest.mock('~/libs/stripe')
 
 const stripePricesRetrive = stripe.prices.retrieve
 const stripePricesRetriveMock = jest.mocked(stripePricesRetrive)
+
 describe('Home page', () => {
   it('Should render correctly', () => {
     const product = { priceId: 'price-id-fake', amount: '$19.00' }

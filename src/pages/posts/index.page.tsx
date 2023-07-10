@@ -10,7 +10,7 @@ type Post = {
   excerpt: string
   updatedAt: string
 }
-interface PostsProps {
+export interface PostsProps {
   posts: Post[]
 }
 

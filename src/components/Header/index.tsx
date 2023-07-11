@@ -1,13 +1,9 @@
-import { FC } from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 
-import { NavItem } from './styles'
 import { SignInButton } from './SignInButton'
+import { ActiveLink } from './ActiveLink'
 
-export const Header: FC = () => {
-  const router = useRouter()
-
+export const Header = () => {
   return (
     <header className="border-b-[1px] h-20 border-gray--800 pt-1">
       <div className="max-w-[1120px] h-full mx-auto flex items-center px-8 [&>button]:ml-auto">
@@ -18,16 +14,9 @@ export const Header: FC = () => {
           alt="Ig.news Logo"
         />
         <nav className="h-full ml-20 flex gap-8">
-          <NavItem active={router.pathname === '/'} href={'/'}>
-            Home
-          </NavItem>
+          <ActiveLink href={'/'}>Home</ActiveLink>
 
-          <NavItem
-            active={router.pathname.startsWith('/posts')}
-            href={'/posts'}
-          >
-            Posts
-          </NavItem>
+          <ActiveLink href={'/posts'}>Posts</ActiveLink>
         </nav>
 
         <SignInButton />

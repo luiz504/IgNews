@@ -15,7 +15,7 @@ type PostType = {
   updatedAt: string
 }
 
-interface PostProps {
+export interface PostProps {
   post: PostType
 }
 

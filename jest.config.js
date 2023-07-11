@@ -13,7 +13,9 @@ const config = {
     '^~/(.*)$': '<rootDir>/src/$1',
   },
   verbose: true,
-  coverageReporters: ['clover', 'json', 'lcov', 'text', 'html'],
+  coverageReporters: ['json', 'lcov'],
+  collectCoverage: true,
+
   coveragePathIgnorePatterns: ['<rootDir>/src/libs/'],
 }
 

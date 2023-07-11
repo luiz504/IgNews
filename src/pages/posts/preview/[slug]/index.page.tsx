@@ -21,9 +21,8 @@ type PostType = {
   updatedAt: string
 }
 
-interface PostPreviewProps {
+export interface PostPreviewProps {
   post: PostType
-  session: any
 }
 
 export default function PostPreview({ post }: PostPreviewProps) {

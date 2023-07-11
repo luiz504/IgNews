@@ -1,5 +1,24 @@
 ![Coverage](./coverage/badges.svg)
 
+"Hello! 👋
+
+Welcome to my GitHub repository for the blog project I created during a ReactJS
+boot camp. This project was built using Next.js, Stripe, OAuth with NextAuth with
+the GitHub provider, FaunaDB, Prismic, and Jest.
+
+The main purpose of this project was to enhance my knowledge and skills in unit
+testing. As part of the boot camp, we were taught to use Sass, but I
+took the initiative to switch to Tailwind CSS to further develop my skills in
+that area.
+
+The project is based on an old module from the Ignite boot camp in 2021. It served
+as a valuable case study to learn and practice unit testing with Jest.
+
+Feel free to explore the code, provide feedback. I'm open to collaboration and
+appreciate any suggestions for improvement.
+
+Thank you for visiting and happy coding! ✨"
+
 # Ig.News
 
 Ig.News is a newsletter application created for educational purposes. It covers
@@ -14,7 +33,7 @@ used in this project include:
   - Stripe Webhooks to update users subscriptions status
 - FaunaDB (Serveless Database)
 - Prismic (CMS)
-- Tests (Comming Soon)
+- Tests (Jest)
 
 ## Installation
 

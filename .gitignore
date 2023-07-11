@@ -6,7 +6,9 @@
 .pnp.js
 
 # testing
-/coverage
+lcov-report
+lcov.info
+coverage-final.json
 
 # next.js
 /.next/

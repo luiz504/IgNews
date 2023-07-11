@@ -3,6 +3,13 @@ import Posts, { PostsProps, getStaticProps } from './index.page'
 import { createPrismicClient } from '~/libs/prismic'
 
 jest.mock('~/libs/prismic')
+jest.mock('next-auth/react', () => {
+  return {
+    useSession() {
+      return [null, false]
+    },
+  }
+})
 
 const createPrismicClientMocked = jest.mocked(createPrismicClient)
 

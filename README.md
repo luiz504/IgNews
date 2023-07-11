@@ -1,3 +1,5 @@
+![Coverage](./coverage/badges.svg)
+
 # Ig.News
 
 Ig.News is a newsletter application created for educational purposes. It covers

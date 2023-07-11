@@ -24,8 +24,6 @@ describe('Post Card Component', () => {
       `/posts/preview/${post.slug}`,
     )
 
-    screen.logTestingPlaygroundURL()
-
     expect(
       screen.getByText(
         (content, element) =>
@@ -49,8 +47,6 @@ describe('Post Card Component', () => {
       'href',
       `/posts/${post.slug}`,
     )
-
-    screen.logTestingPlaygroundURL()
 
     expect(
       screen.getByText(

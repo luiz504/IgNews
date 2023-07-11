@@ -14,8 +14,7 @@ const config = {
   },
   verbose: true,
   coverageReporters: ['json', 'lcov', 'json-summary'],
-  collectCoverage: true,
-
+  // collectCoverage: true,
   coveragePathIgnorePatterns: ['<rootDir>/src/libs/'],
 }
 

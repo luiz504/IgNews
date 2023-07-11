@@ -58,7 +58,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     }
   }
 
-  const slug = queryParamToString(params?.slug) || ''
+  const slug = queryParamToString(params?.slug)
 
   const prismic = createPrismicClient()
 

@@ -75,4 +75,38 @@ describe('Posts page', () => {
       }),
     )
   })
+
+  it('should load return  excerpt as empty string when the first content is not a paragraph type', async () => {
+    const getallByTypeMock = jest.fn().mockResolvedValue([
+      {
+        uid: 'post-uid-1',
+        data: {
+          title: 'post 1 title',
+          content: [{ type: 'span', text: 'Post content first paragraph' }],
+        },
+        last_publication_date: '04-01-2042',
+      },
+    ] as any)
+
+    createPrismicClientMocked.mockReturnValueOnce({
+      getAllByType: getallByTypeMock,
+    } as any)
+
+    const response = await getStaticProps({})
+
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          posts: [
+            {
+              slug: 'post-uid-1',
+              title: 'post 1 title',
+              excerpt: '',
+              updatedAt: '01 de abril de 2042',
+            },
+          ],
+        },
+      }),
+    )
+  })
 })

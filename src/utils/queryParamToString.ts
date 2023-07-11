@@ -1,2 +1,2 @@
 export const queryParamToString = (param?: string | string[]) =>
-  param ? String(param) : undefined
+  param ? String(param) : ''

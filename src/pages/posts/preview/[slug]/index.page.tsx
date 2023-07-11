@@ -76,7 +76,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = queryParamToString(params?.slug) || ''
+  const slug = queryParamToString(params?.slug)
 
   const prismic = createPrismicClient()
 
